@@ -1,0 +1,30 @@
+<div class="container">
+    <table class="table" *ngIf="showTbl">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Mobile No</td>
+                <td>Email</td>
+                <td>Employee Code</td>
+                <td>Department</td>
+                <td>Address</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of dataArr">
+                <td>{{d.name}}</td>
+                <td>{{d.mob}}</td>
+                <td>{{d.email}}</td>
+                <td>{{d.empCode}}</td>
+                <td>{{d.dept}}</td>
+                <td>{{d.add}}</td>
+                <td>
+                    <span class="mx-1" (click)="deleteData(d)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    <span class="mx-1" (click)="updateData(d)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h5 *ngIf="!showTbl" class="text-center"> No Data Found !!!</h5>
+</div>

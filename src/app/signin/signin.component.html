@@ -1,0 +1,45 @@
+<div class="dfc">
+    <div class="card" style="height: 80vh; width: 60vw; margin-top: 10vh;">
+        <div class="login" *ngIf="loginPage" style="margin-top: 15vh;">
+            <form [formGroup]="loginForm" class="dfc">
+                <label class="my-1" for="">UserName<span class="text-danger">*</span></label>
+                <input type="text" class="form-control w-50 mt-1" formControlName="uname">
+                <label class="my-1" for="">Password<span class="text-danger">*</span></label>
+                <input type="text" class="form-control w-50 mt-1" formControlName="pwd">
+                <div class="btns mt-2">
+                    <button class="btn btn-primary commonBtn my-3 mx-2" (click)="login()"
+                        [disabled]="loginForm.invalid">login</button>
+                </div>
+            </form>
+            <div class="reg dfc">
+                <span>
+                    Don't have an account?
+                </span><a class="btn btn-danger" (click)="loadRegister()">Register</a>
+            </div>
+        </div>
+        <div class="register" *ngIf="!loginPage" style="margin-top: 5vh;">
+            <form [formGroup]="regForm" class="dfc">
+                <label class="my-1" for="">Name <span class="text-danger">*</span></label>
+                <input type="text" formControlName="name" class="form-control w-50 mt-1">
+                <label class="my-1" for="">Mobile No. <span class="text-danger">*</span></label>
+                <input type="text" formControlName="mob" class="form-control w-50 mt-1">
+                <label class="my-1" for="">Email <span class="text-danger">*</span></label>
+                <input type="email" formControlName="email" class="form-control w-50 mt-1">
+                <label class="my-1" for="">UserName <span class="text-danger">*</span></label>
+                <input type="text" formControlName="uname" class="form-control w-50 mt-1">
+                <label class="my-1" for="">Password <span class="text-danger">*</span></label>
+                <input type="text" formControlName="pwd" class="form-control w-50 mt-1">
+
+                <div class="btns mt-2">
+                    <button class="btn btn-primary commonBtn my-3 mx-2" (click)="registerUser()"
+                        [disabled]="regForm.invalid">register</button>
+                </div>
+            </form>
+            <div class="reg dfc">
+                <span>
+                    Already have an account?
+                </span><a class="btn btn-danger" (click)="loadLogin()">Login</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card dfc">
+        <form [formGroup]="registerForm">
+            <label for="">Name</label>
+            <input type="text" formControlName="name" class="form-control w-50">
+
+            <label for="">Mobile</label>
+            <input type="text" formControlName="mob" class="form-control w-50">
+
+            <label for="">Email</label>
+            <input type="text" formControlName="email" class="form-control w-50">
+
+            <label for="">Employee Code</label>
+            <input type="text" formControlName="empCode" class="form-control w-50" [readonly]="updt">
+
+            <label for="">Department</label>
+            <input type="text" formControlName="dept" class="form-control w-50">
+
+            <label for="">Address</label>
+            <textarea formControlName="add" class="form-control w-50" cols="30" rows="10"></textarea>
+
+            <div class="btns">
+                <button *ngIf="!updt" class="btn btn-primary" (click)="onSubmit('add')">Submit</button>
+                <button *ngIf="updt" class="btn btn-primary" (click)="onSubmit('updt')">update</button>
+            </div>
+        </form>
+    </div>
+</div>

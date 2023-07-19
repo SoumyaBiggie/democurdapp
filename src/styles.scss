@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./main.css" ;
+@import "~bootstrap/dist/css/bootstrap.css";
+.dfc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.w-50{
+    width: 40em !important;
+}
+
+.commonBtn{
+    text-transform: uppercase;
+}
